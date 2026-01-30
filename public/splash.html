@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #6439ff;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        #logo-container {
+            display: flex;
+            transition: opacity 0.5s ease;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 4rem;
+            font-weight: bold;
+            letter-spacing: -2px;
+        }
+
+        #loader-container {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="logo-container">
+        <div class="logo-text">FlipBook</div>
+    </div>
+
+    <div id="loader-container">
+        <div class="spinner"></div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            const logo = document.getElementById('logo-container');
+            const loader = document.getElementById('loader-container');
+
+            logo.style.opacity = '0';
+
+            setTimeout(() => {
+                logo.style.display = 'none';
+                loader.style.display = 'block';
+
+                requestAnimationFrame(() => {
+                    loader.style.opacity = '1';
+                });
+            }, 500);
+
+        }, 1500);
+    </script>
+</body>
+
+</html>
