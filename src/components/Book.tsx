@@ -61,7 +61,7 @@ export const Book = ({ pdfData }: BookProps) => {
                     showCover={true}
                     onFlip={onPage}
                     className="demo-book"
-                    style={{ boxShadow: '0 0 20px rgba(0,0,0,0.2)' }}
+                    style={{}}
                     startPage={0}
                     size="fixed"
                     minWidth={300}
