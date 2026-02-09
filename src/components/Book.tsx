@@ -48,7 +48,13 @@ export const Book = ({ pdfData }: BookProps) => {
     }
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh', padding: '40px', overflow: 'hidden' }}>
+        <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: '80vh',
+            padding: '40px',
+        }}>
 
             {/* Book container */}
             <div style={bookContainerStyle}>
